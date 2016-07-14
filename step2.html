@@ -12,14 +12,14 @@
 	<div class="container-fluid" ng-controller="firstcontroller" >
 		<table class="table " border="1" cellspacing="5" cellpadding="5">
 		<tr>
-			<th>Title</th>
-			<th>Photo</th>
-			<th>Full Name</th>
-			<th>City</th>
-			<th>Price</th>
-			<th>Release Date</th>
+			<th ng-click="sortHandler('title')" >Title</th>
+			<th ng-click="sortHandler('photo')" >Photo</th>
+			<th ng-click="sortHandler('fName')" >Full Name</th>
+			<th ng-click="sortHandler('city')" >City</th>
+			<th ng-click="sortHandler('price')" >Price</th>
+			<th ng-click="sortHandler('releasedate')" >Release Date</th>
 		</tr>
-		<tr ng-repeat="hero in data">
+		<tr ng-repeat="hero in data | orderBy : sorton : asend ">
 			<td>{{ hero.title | uppercase }}</td>
 			<td><img ng-src="{{ hero.photo }}" width="40" align="absmiddle" /></td>
 			<td>{{ hero.fName+" "+hero.lName }}</td>
