@@ -7,4 +7,12 @@ angular.module("app").controller("firstcontroller", function($scope){
 		{title : 'Phantom', 	fName : 'Kit', 		lName:'Walker', city:'Bangala', 	power : 7, releasedate : '2016-06-04', price: 90.894567, photo:'images/phantom.jpg'},
 		{title : 'Rajani', 		fName : 'Rajani', 	lName:'kanth', city:'Chennai', 		power : 9, releasedate : '2016-06-04', price: 90.894567, photo:'images/phantom.jpg'}
 		];
+	$scope.sorton = "price";
+	$scope.asend = false;
+	
+	$scope.sortHandler = function(arg){
+		// alert("you clicked to sort");
+		$scope.sorton = arg;
+		$scope.asend = !$scope.asend;
+	}
 });
