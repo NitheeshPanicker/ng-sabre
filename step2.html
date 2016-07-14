@@ -10,6 +10,8 @@
 </head>
 <body ng-app="app" >
 	<div class="container-fluid" ng-controller="firstcontroller" >
+		<input type="text" ng-model="filteron" />
+		<hr/>
 		<table class="table " border="1" cellspacing="5" cellpadding="5">
 		<tr>
 			<th ng-click="sortHandler('title')" >Title</th>
@@ -19,7 +21,7 @@
 			<th ng-click="sortHandler('price')" >Price</th>
 			<th ng-click="sortHandler('releasedate')" >Release Date</th>
 		</tr>
-		<tr ng-repeat="hero in data | orderBy : sorton : asend ">
+		<tr ng-repeat="hero in data | orderBy : sorton : asend | filter : {title : filteron} ">
 			<td>{{ hero.title | uppercase }}</td>
 			<td><img ng-src="{{ hero.photo }}" width="40" align="absmiddle" /></td>
 			<td>{{ hero.fName+" "+hero.lName }}</td>
