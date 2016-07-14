@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Angular 101</title>
+	<script src="lib/angular.js"></script>
+</head>
+<body 	ng-app ng-init="user='Batman'; 
+		heroes=['batman', 'superman', 'ironman'];
+		photo ='images/superman.jpg'">
+	<h1>{{ user }}</h1>	<!-- one way data binding -->
+	<h1>{{ heroes.length }}</h1>
+	<input type="text" value="{{ user }}" />
+	<br/>
+	<input type="text" ng-value="user" />
+	<br/>
+	<input type="text" ng-model="user" /><!-- two-way binding -->
+	<br/>
+	<img ng-src="{{ photo }}" />
+	<h1>{{ ::user }}</h1><!-- one time binding -->
+</body>
+</html>
