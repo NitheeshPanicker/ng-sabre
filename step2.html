@@ -20,12 +20,12 @@
 			<th>Release Date</th>
 		</tr>
 		<tr ng-repeat="hero in data">
-			<td>{{ hero.title }}</td>
-			<td>{{ hero.photo }}</td>
+			<td>{{ hero.title | uppercase }}</td>
+			<td><img ng-src="{{ hero.photo }}" width="40" align="absmiddle" /></td>
 			<td>{{ hero.fName+" "+hero.lName }}</td>
 			<td>{{ hero.city }}</td>
-			<td>{{ hero.price }}</td>
-			<td>{{ hero.releasedate }}</td>
+			<td>{{ hero.price | currency : 'INR ' : 0 }}</td>
+			<td>{{ hero.releasedate | date : 'dd/MMM/yyyy' }}</td>
 		</tr>
 	</table>
 	</div>
