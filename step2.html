@@ -9,19 +9,19 @@
 	<script src="com/sabre/controller/firstcontroller.controller.js"></script>
 </head>
 <body ng-app="app" >
-	<div class="container-fluid" ng-controller="firstcontroller" >
-		<input type="text" ng-model="filteron" />
+	<div class="container-fluid" ng-controller="firstcontroller as fc" >
+		<input type="text" ng-model="fc.filteron" />
 		<hr/>
 		<table class="table " border="1" cellspacing="5" cellpadding="5">
 		<tr>
-			<th ng-click="sortHandler('title')" >Title</th>
-			<th ng-click="sortHandler('photo')" >Photo</th>
-			<th ng-click="sortHandler('fName')" >Full Name</th>
-			<th ng-click="sortHandler('city')" >City</th>
-			<th ng-click="sortHandler('price')" >Price</th>
-			<th ng-click="sortHandler('releasedate')" >Release Date</th>
+			<th ng-click="fc.sortHandler('title')" >Title</th>
+			<th ng-click="fc.sortHandler('photo')" >Photo</th>
+			<th ng-click="fc.sortHandler('fName')" >Full Name</th>
+			<th ng-click="fc.sortHandler('city')" >City</th>
+			<th ng-click="fc.sortHandler('price')" >Price</th>
+			<th ng-click="fc.sortHandler('releasedate')" >Release Date</th>
 		</tr>
-		<tr ng-repeat="hero in data | orderBy : sorton : asend | filter : {title : filteron} ">
+		<tr ng-repeat="hero in fc.data | orderBy : fc.sorton : fc.asend | filter : {title : fc.filteron} ">
 			<td>{{ hero.title | uppercase }}</td>
 			<td><img ng-src="{{ hero.photo }}" width="40" align="absmiddle" /></td>
 			<td>{{ hero.fName+" "+hero.lName }}</td>
