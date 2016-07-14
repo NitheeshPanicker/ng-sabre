@@ -5,28 +5,12 @@
 	<title>Document</title>
 	<link href="style/bootstrap.css" rel="stylesheet" />
 	<script src="lib/angular.js"></script>
-	
+	<script src="com/sabre/module/app.module.js"></script>
+	<script src="com/sabre/controller/firstcontroller.controller.js"></script>
 </head>
-<body ng-app ng-init="data = [
-	{title : 'Batman', 		fName : 'Bruce', 	lName:'Wayne', 	city:'Gotham', 		power : 7, releasedate : '2016-02-10', price:123.456789, photo:'images/batman.jpg'},
-	{title : 'Superman', 	fName : 'Clark', 	lName:'Kent', 	city:'Metropolis', 	power : 8, releasedate : '2016-06-01', price:125.678459, photo:'images/superman.jpg'},
-	{title : 'Ironman', 	fName : 'Tony', 	lName:'Stark', 	city:'New York', 	power : 6, releasedate : '2016-06-02', price:144.678459, photo:'images/ironman.jpg'},
-	{title : 'Spiderman', 	fName : 'Peter', 	lName:'Parker', city:'New York', 	power : 7, releasedate : '2016-06-03', price:201.674589, photo:'images/spiderman.jpg'},
-	{title : 'Phantom', 	fName : 'Kit', 		lName:'Walker', city:'Bangala', 	power : 7, releasedate : '2016-06-04', price: 90.894567, photo:'images/phantom.jpg'},
-	{title : 'Rajani', 		fName : 'Rajani', 	lName:'kanth', city:'Chennai', 		power : 9, releasedate : '2016-06-04', price: 90.894567, photo:'images/phantom.jpg'}
-	]">
-	<!--ul>
-		<li>{{ data[0].title }}</li>
-		<li>{{ data[1].title }}</li>
-		<li>{{ data[2].title }}</li>
-		<li>{{ data[3].title }}</li>
-		<li>{{ data[4].title }}</li>
-	</ul-->
-	<!--ul>
-		<li ng-repeat="hero in data" >{{ hero.title }}</li>
-	</ul-->
-	<div class="container-fluid">
-		<table class="table table-hover" border="1" cellspacing="5" cellpadding="5">
+<body ng-app="app" >
+	<div class="container-fluid" ng-controller="firstcontroller" >
+		<table class="table " border="1" cellspacing="5" cellpadding="5">
 		<tr>
 			<th>Title</th>
 			<th>Photo</th>
@@ -45,5 +29,6 @@
 		</tr>
 	</table>
 	</div>
+	
 </body>
 </html>
